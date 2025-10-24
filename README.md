@@ -17,11 +17,30 @@ https://ngx-easy-table.eu
 
 ## Installation
 
+### From npm (Original)
 `npm install ngx-easy-table --save`
+
+### From GitHub (This Fork with paginationRanges support)
+Download the tarball from the [latest release](https://github.com/clichedmoog/ngx-easy-table/releases) and install:
+```bash
+npm install https://github.com/clichedmoog/ngx-easy-table/releases/download/v12.0.0-pagination-ranges/ngx-easy-table-v12.0.0-pagination-ranges.tgz
+```
 
 Library requires `@angular/cdk`, please install it as well.
 
 `npm install @angular/cdk --save`
+
+### New Feature: Configurable Pagination Ranges
+
+This fork adds support for customizable pagination range options:
+
+```typescript
+configuration = {
+  ...
+  paginationRanges: [10, 25, 50, 100, 250], // Custom ranges instead of default [5, 10, 25, 50, 100]
+  ...
+};
+```
 
 ## Available config settings:
 
