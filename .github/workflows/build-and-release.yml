@@ -17,19 +17,15 @@ jobs:
         with:
           node-version: '12.x'
 
-      - name: Setup Python
-        uses: actions/setup-python@v4
-        with:
-          python-version: '2.7'
-
       - name: Install dependencies
         run: |
           npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+          npm install -g sass
 
       - name: Build library
         run: |
           npx ng build ngx-easy-table
-          npx node-sass projects/ngx-easy-table/assets/style.scss dist/ngx-easy-table/style.css || npx sass projects/ngx-easy-table/assets/style.scss dist/ngx-easy-table/style.css
+          sass projects/ngx-easy-table/assets/style.scss dist/ngx-easy-table/style.css
           cp projects/ngx-easy-table/assets/style.scss dist/ngx-easy-table/style.scss
 
       - name: Create tarball
