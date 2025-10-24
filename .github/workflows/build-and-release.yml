@@ -32,7 +32,7 @@ jobs:
 
       - name: Build library
         run: |
-          npx --yes @angular/cli@9.0.3 build ngx-easy-table
+          npx ng build ngx-easy-table
           sass projects/ngx-easy-table/assets/style.scss dist/ngx-easy-table/style.css
           cp projects/ngx-easy-table/assets/style.scss dist/ngx-easy-table/style.scss
 
