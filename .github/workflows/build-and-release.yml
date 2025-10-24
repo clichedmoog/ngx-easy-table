@@ -19,12 +19,19 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm ci --legacy-peer-deps || npm install --legacy-peer-deps
+          npm install --legacy-peer-deps
           npm install -g sass
+
+      - name: Verify installation
+        run: |
+          node --version
+          npm --version
+          npx ng version || echo "Angular CLI check failed"
+          sass --version
 
       - name: Build library
         run: |
-          npx ng build ngx-easy-table
+          npx --yes @angular/cli@9.0.3 build ngx-easy-table
           sass projects/ngx-easy-table/assets/style.scss dist/ngx-easy-table/style.css
           cp projects/ngx-easy-table/assets/style.scss dist/ngx-easy-table/style.scss
 
