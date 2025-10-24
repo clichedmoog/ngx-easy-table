@@ -19,7 +19,8 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install --legacy-peer-deps
+          npm install --legacy-peer-deps --ignore-scripts
+          npm rebuild --ignore-scripts
           npm install -g sass
 
       - name: Verify installation
