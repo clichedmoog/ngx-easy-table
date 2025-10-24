@@ -30,7 +30,7 @@ export class PaginationComponent implements OnChanges {
   @Input() config: Config;
   @Input() id;
   @Output() readonly updateRange: EventEmitter<PaginationRange> = new EventEmitter();
-  public ranges: number[] = [5, 10, 25, 50, 100];
+  public ranges: number[];
   public selectedLimit: number;
   public showRange = false;
   public screenReaderPaginationLabel = 'Pagination';
@@ -51,6 +51,7 @@ export class PaginationComponent implements OnChanges {
     const { config } = changes;
     if (config && config.currentValue) {
       this.selectedLimit = this.config.rows;
+      this.ranges = this.config.paginationRanges || [5, 10, 25, 50, 100];
     }
   }
 

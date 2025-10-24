@@ -17,6 +17,7 @@ export interface Config {
   /* @deprecated Will be removed in the next version */
   groupRows: boolean;
   paginationRangeEnabled: boolean;
+  paginationRanges?: number[];
   collapseAllRows: boolean;
   checkboxes: boolean;
   radio?: boolean;

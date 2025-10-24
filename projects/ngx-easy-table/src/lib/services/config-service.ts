@@ -19,6 +19,7 @@ export const DefaultConfig: Config = {
   detailsTemplate: false,
   groupRows: false,
   paginationRangeEnabled: true,
+  paginationRanges: [5, 10, 25, 50, 100],
   collapseAllRows: false,
   checkboxes: false,
   radio: false,
